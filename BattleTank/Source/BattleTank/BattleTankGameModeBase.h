@@ -2,9 +2,10 @@
 
 #pragma once
 
+#include "Engine.h"
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "BattleTankGameModeBase.generated.h"
+#include "BattleTankGameModeBase.generated.h" /// generated.h must be the last include
 
 /**
  * 
