@@ -17,7 +17,10 @@ class BATTLETANK_API ATankAIController : public AAIController
 	GENERATED_BODY()
 	
 public:
+	virtual void BeginPlay() override; /// BeginPlay() should be public IF you want to make a class that inherits from this one
+
+private:
 	ATank* GetControlledTank() const;
 
-	virtual void BeginPlay() override;
+	ATank* GetPlayerTank() const;
 };
