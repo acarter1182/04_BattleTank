@@ -1,15 +1,13 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "TankPlayerController.h"
 #include "BattleTank.h" /// might not be needed
-
 
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay(); /// makes sure the BeginPlay function is called on the PARENT class this inherits from
 
-	auto ControlledTank = GetControlledTank();
+	auto ControlledTank = GetControlledTank(); /// auto keyword to automatically figure out the type
 
 	if (!ControlledTank)
 	{
