@@ -2,9 +2,9 @@
 
 #pragma once
 
-#include "Tank.h"
 #include "Engine.h"
 #include "CoreMinimal.h"
+#include "Tank.h"
 #include "GameFramework/PlayerController.h"
 #include "TankPlayerController.generated.h" /// generated.h must be the last include
 
@@ -20,4 +20,12 @@ public:
 	ATank* GetControlledTank() const;
 	
 	virtual void BeginPlay() override;
+
+	virtual void Tick(float DeltaTime) override; /// ensure the signature/parameters are the same with the cpp file
+
+private:
+	void AimTowardsCrosshair(); // Start the tank moving the barrel so that a shot would hit where the crosshair intersects the world
+
+	bool GetSightRayHitLocation(FVector& HitLocation) const; /// out parameters work by passing A REFERENCE TO....in this case a reference to an FVector
+
 };
