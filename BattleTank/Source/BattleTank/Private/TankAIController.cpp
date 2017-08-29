@@ -20,6 +20,20 @@ void ATankAIController::BeginPlay()
 	}
 }
 
+void ATankAIController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime); /// makes sure the Tick function is called on the PARENT class this inherits from
+	if (GetPlayerTank())
+	{
+		// TODO Move towards the player
+
+		// Aim towards the player
+		GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
+
+		// Fire if ready
+	}
+}
+
 ATank* ATankAIController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn()); /// to find out which tank we are controlling

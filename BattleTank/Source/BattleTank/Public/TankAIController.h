@@ -2,9 +2,9 @@
 
 #pragma once
 
-#include "Tank.h"
 #include "Engine.h"
 #include "CoreMinimal.h"
+#include "Tank.h"
 #include "AIController.h"
 #include "TankAIController.generated.h"
 
@@ -18,6 +18,8 @@ class BATTLETANK_API ATankAIController : public AAIController
 	
 public:
 	virtual void BeginPlay() override; /// BeginPlay() should be public IF you want to make a class that inherits from this one
+
+	virtual void Tick(float DeltaTime) override;
 
 private:
 	ATank* GetControlledTank() const;
