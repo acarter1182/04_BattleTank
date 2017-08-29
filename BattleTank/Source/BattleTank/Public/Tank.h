@@ -16,6 +16,9 @@ class BATTLETANK_API ATank : public APawn
 public:
 	void AimAt(FVector HitLocation);
 
+	UFUNCTION(BlueprintCallable, Category = Setup) /// NO SEMICOLON ON END OF UFUNCTIONS, BlueprintCallable allows the function to be called via blueprint OBVIOUS
+	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 

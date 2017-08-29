@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Tank.h"
+#include "../Public/Tank.h"
 
 
 // Sets default values
@@ -12,6 +13,11 @@ ATank::ATank()
 	// No need to protect pointers as added at construction
 	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component")); /// Create a subobject as default
 	/// (so automatically part of), what type of component, FNAME is the name the object will have by default
+}
+
+void ATank::SetBarrelReference(UStaticMeshComponent * BarrelToSet)
+{
+	TankAimingComponent->SetBarrelReference(BarrelToSet);
 }
 
 // Called when the game starts or when spawned
