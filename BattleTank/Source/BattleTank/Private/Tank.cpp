@@ -15,7 +15,7 @@ ATank::ATank()
 	/// (so automatically part of), what type of component, FNAME is the name the object will have by default
 }
 
-void ATank::SetBarrelReference(UStaticMeshComponent * BarrelToSet)
+void ATank::SetBarrelReference(UTankBarrel * BarrelToSet)
 {
 	TankAimingComponent->SetBarrelReference(BarrelToSet);
 }

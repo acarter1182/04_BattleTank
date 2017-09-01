@@ -8,6 +8,9 @@
 #include "TankAimingComponent.h"
 #include "Tank.generated.h"
 
+class UTankBarrel; /// FORWARD DECLARATION, allows for REFERENCE ONLY HERE and makes dependencies very explicit without creating a chain of dependencies
+/// if the need for calling functions then do #include instead
+
 UCLASS()
 class BATTLETANK_API ATank : public APawn
 {
@@ -17,7 +20,7 @@ public:
 	void AimAt(FVector HitLocation);
 
 	UFUNCTION(BlueprintCallable, Category = Setup) /// NO SEMICOLON ON END OF UFUNCTIONS, BlueprintCallable allows the function to be called via blueprint OBVIOUS
-	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
+	void SetBarrelReference(UTankBarrel* BarrelToSet);
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
