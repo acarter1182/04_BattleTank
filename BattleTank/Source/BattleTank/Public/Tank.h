@@ -25,9 +25,6 @@ public:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr; /// used here because it will have a UPROPERTY so can't be private, and nobody outside of Tank needs it so we dont make public
 
